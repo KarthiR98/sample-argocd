@@ -1,2 +1,7 @@
 FROM ubi9/php-81
-WORKDIR .
+
+COPY index.php  /opt/app-root/src/
+
+EXPOSE 80
+
+CMD ["httpd", "-D", "FOREGROUND"]
