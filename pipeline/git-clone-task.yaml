@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: clone-php-repo
+spec:
+  params:
+  - name: repo-url
+    type: string
+  - name: repo-path
+    type: string
+    default: /workspace/repo
+  steps:
+  - name: git-clone
+    image: alpine/git
+    args:
+    - clone
+    - $(params.repo-url)
+    - $(params.repo-path)
