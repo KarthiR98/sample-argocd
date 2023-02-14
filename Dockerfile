@@ -2,6 +2,6 @@ FROM ubi9/php-81
 
 COPY index.php  /opt/app-root/src/
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["httpd", "-D", "FOREGROUND"]
